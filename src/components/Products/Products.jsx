@@ -34,29 +34,34 @@ const Products = () => {
   ];
 
   return (
-    <section id="products" className="products section">
+    <section id="products" className="products section" itemScope itemType="https://schema.org/ItemList">
       <div className="container">
         <div className="section-header text-center">
-          <h2>Illumination Solutions For Every Vision</h2>
-          <p>
+          <h2 itemProp="name">Illumination Solutions For Every Vision</h2>
+          <p itemProp="description">
             Modern or traditional architecture? Single or multi-level installations? 
             Whatever your lighting needs may be, we have the perfect solution for you.
           </p>
-          <button className="btn-primary">Discover All Products</button>
+          <button className="btn-primary" aria-label="Explore all architectural lighting products and solutions">Discover All Products</button>
         </div>
         
         <div className="products-grid grid grid-2x2">
-          {productCategories.map((product) => (
-            <div key={product.id} className="product-card">
+          {productCategories.map((product, index) => (
+            <div key={product.id} className="product-card" itemScope itemType="https://schema.org/Product" itemProp="itemListElement">
+              <meta itemProp="position" content={index + 1} />
               <div className="product-image">
-                <img src={product.image} alt={product.title} />
+                <img 
+                  src={product.image} 
+                  alt={`${product.title} - ${product.description} by Luminarch architectural lighting`}
+                  itemProp="image"
+                />
                 <div className="product-overlay">
-                  <button className="product-link">View Category</button>
+                  <button className="product-link" aria-label={`View ${product.title} category details and specifications`}>View Category</button>
                 </div>
               </div>
               <div className="product-content">
-                <h3>{product.title}</h3>
-                <p>{product.description}</p>
+                <h3 itemProp="name">{product.title}</h3>
+                <p itemProp="description">{product.description}</p>
               </div>
             </div>
           ))}

@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer" itemScope itemType="https://schema.org/Organization">
       <div className="container">
         <div className="footer-content">
           <div className="footer-section brand-section">
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="contact-info">
               {/* <p>📍 Innovation District<br />San Francisco, CA 94107<br />United States</p>
               <p>📞 +1 (555) 123-4567</p> */}
-              <p>✉️ info@luminarch.com</p>
+              <p>✉️ contact.luminarch@gmail.com</p>
             </div>
           </div>
 

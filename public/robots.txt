@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
-Sitemap: /sitemap.xml
+# Sitemaps
+Sitemap: https://luminarch.netlify.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Host
+Host: https://luminarch.netlify.app

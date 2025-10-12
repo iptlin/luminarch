@@ -12,18 +12,18 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content">
-          <div className="logo">
-            <a href="/">
-              <h2>LUMINARCH</h2>
+          <div className="logo" itemScope itemType="https://schema.org/Organization">
+            <a href="/" aria-label="Luminarch - Home page">
+              <h2 itemProp="name">LUMINARCH</h2>
             </a>
           </div>
           
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`} role="navigation" aria-label="Main navigation">
             <ul className="nav-list">
-              <li><a href="#products">Products</a></li>
-              <li><a href="#product-details">Product Details</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#products" aria-label="View our architectural lighting products">Products</a></li>
+              <li><a href="#product-details" aria-label="Detailed product specifications and features">Product Details</a></li>
+              <li><a href="#about" aria-label="About Luminarch company">About Us</a></li>
+              <li><a href="#contact" aria-label="Contact Luminarch for inquiries">Contact</a></li>
             </ul>
           </nav>
           
