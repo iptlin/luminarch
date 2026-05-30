@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ onNavigate }) => {
   const [email, setEmail] = useState('');
 
   const handleNewsletterSubmit = (e) => {
@@ -9,6 +9,15 @@ const Footer = () => {
     // Handle newsletter subscription
     console.log('Newsletter subscription:', email);
     setEmail('');
+  };
+
+  const handlePrivacyNavigation = (e) => {
+    if (!onNavigate) {
+      return;
+    }
+
+    e.preventDefault();
+    onNavigate('/privacy');
   };
 
   return (
@@ -80,7 +89,7 @@ const Footer = () => {
           <div className="footer-bottom-content">
             <p>&copy; 2025 Luminarch. All rights reserved. Illuminating architectural excellence worldwide.</p>
             <div className="footer-links">
-              <a href="/privacy">Privacy Policy</a>
+              <a href="/privacy" onClick={handlePrivacyNavigation}>Privacy Policy</a>
               <a href="/terms">Terms of Service</a>
               <a href="/cookies">Cookie Policy</a>
             </div>

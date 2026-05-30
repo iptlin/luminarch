@@ -71,6 +71,17 @@
   width: 100%;
 }
 
+.header-page-link a {
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+.header-page-link a:hover {
+  color: var(--accent-hover);
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
